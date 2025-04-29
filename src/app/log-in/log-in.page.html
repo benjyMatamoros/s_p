@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+    <title>Tinder</title>
+    
+    <div id="background">
+        <ion-grid fixed="true">
+            
+            <div id="start_slide" class="nondisplay" [ngClass]="{ 'display': display_start}" >
+                <div id="page">
+                    <h1>Tinder</h1>
+                    <h3>A follar</h3>
+                    <div id="button_block">
+                        <ion-button id="log_button" (click)="log_in()">Log in</ion-button>
+                        <ion-button id="sign_button" (click)="sign_up()">Sign up    </ion-button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="log-in" class="nondisplay" [ngClass]="{ 'display': display_login}" >
+                <div id="page">
+
+                        <form (submit)="onLogin()">
+                      
+                          <ion-item>
+                            <ion-label position="floating">Email</ion-label>
+                            <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+                          </ion-item>
+                      
+                          <ion-item>
+                            <ion-label position="floating">Password</ion-label>
+                            <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+                          </ion-item>
+                      
+                          <ion-button expand="block" type="submit" class="ion-margin-top">
+                            Login
+                          </ion-button>
+        
+                        </form>
+                </div>
+            </div>
+
+            <div id="sign-up" class="nondisplay" [ngClass]="{ 'display': display_signup }">
+                <div id="signup-container">
+
+                <div id="input_box">
+                    <label>Correo electronico</label>
+                    <input type="text" [(ngModel)]="user.email">
+                    
+                    <label>Contraseña</label>
+                    <input type="text" [(ngModel)]="user.password">
+                  
+                    <label>Nombre</label>
+                    <input type="text" [(ngModel)]="user.name">
+                    
+                    <label>Descripcion corta</label>
+                    <input type="text" id="description" [(ngModel)]="user.description">
+              
+                    <label>Profile Picture</label>
+                    <input type="file" (change)="handleUpload($event)">
+                    
+                    <ion-button (click)="saveForm()">Create account</ion-button>
+                </div>
+              
+                  <div id="preview_box">
+                    <img *ngIf="profile_pic" [src]="profile_pic" id="profile_preview">
+                  </div>
+                </div>
+              </div>
+              
+        </ion-grid>
+    </div>
+</ion-content>

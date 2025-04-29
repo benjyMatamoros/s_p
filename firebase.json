@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "C:\\Users\\inesb\\OneDrive\\Desktop\\Angular\\front\\s_p\\www",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

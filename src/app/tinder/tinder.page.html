@@ -1,0 +1,64 @@
+<ion-content [fullscreen]="true">
+  <title>Tinder</title>
+  <div id="background">
+    <img *ngIf="userProfilePic" [src]="userProfilePic" class="profile-circle" />
+    <ion-grid [fixed]="true">
+      <ion-row>
+        <ion-col></ion-col>
+
+        <ion-col id="center_col">
+
+          <div id="no-users-box">
+            <div id="info_box">
+              <div id="n_a">
+                <h1 id="name">No hay mas usuarios</h1>
+              </div>
+              <h3 id="description">Vuelve despues</h3>
+            </div>
+          </div>
+
+          <div id="person_box_2" [ngStyle]="boxStyles2">
+            <div id="info_box">
+              <div id="n_a">
+                <h1 id="name">{{pretendientes[1]?.name}}</h1>
+                <h2 id="age">{{pretendientes[1]?.age}}</h2>
+              </div>
+              <h3 id="description">{{pretendientes[1]?.description}}</h3>
+            </div>
+          </div>
+
+          <div id="person_box" [ngStyle]="boxStyles">
+            <div id="info_box">
+              <div id="n_a">
+                <h1 id="name">{{pretendientes[0]?.name}}</h1>
+                <h2 id="age">{{pretendientes[0]?.age}}</h2>
+              </div>
+              <h3 id="description">{{pretendientes[0]?.description}}</h3>
+            </div>
+          </div>
+
+          <div id="button_box">
+            <ion-button 
+              id="dislike_button" 
+              class="interaction_button" 
+              (click)="startSlide('left')" 
+              [disabled]="pretendientes.length === 0">
+              <img src="./../../assets/x_icon.png" alt="">
+            </ion-button>
+
+            <ion-button 
+              id="like_button" 
+              class="interaction_button" 
+              (click)="startSlide('right')" 
+              [disabled]="pretendientes.length === 0">
+              <img src="./../../assets/heart_icon.png" alt="">
+            </ion-button>
+          </div>
+
+        </ion-col>
+
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
