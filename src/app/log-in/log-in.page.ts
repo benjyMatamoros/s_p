@@ -42,7 +42,7 @@ export class LogInPage implements OnInit {
   profile_pic = '';
   email: string = '';
   password: string = '';
-  url_host = 'http://localhost:3000/';
+  url_host = 'https://backend-tinder-oa3y.onrender.com/';
   public pretendientes: any[] = [];
 
   user = {
