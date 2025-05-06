@@ -35,6 +35,7 @@
                           </ion-button>
         
                         </form>
+                        <ion-button fill="clear" color="medium" (click)="backToStart()">← Volver</ion-button>
                 </div>
             </div>
 
@@ -58,7 +59,9 @@
                     <input type="file" (change)="handleUpload($event)">
                     
                     <ion-button (click)="saveForm()">Create account</ion-button>
+                    <ion-button fill="clear" color="medium" (click)="backToStart()">← Volver</ion-button>
                 </div>
+               
               
                   <div id="preview_box">
                     <img *ngIf="profile_pic" [src]="profile_pic" id="profile_preview">
